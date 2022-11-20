@@ -1,0 +1,16 @@
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.csproj.AssemblyReference.cache
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.csproj.SuggestedBindingRedirects.cache
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.FormAuthori.resources
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.Properties.Resources.resources
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.csproj.GenerateResource.cache
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.csproj.CoreCompileInputs.cache
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityMain.exe.config
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityMain.exe
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityMain.pdb
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityFramework.dll
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityFramework.SqlServer.dll
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityFramework.xml
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\bin\Debug\EntityFramework.SqlServer.xml
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.csproj.CopyComplete
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.exe
+K:\Users\Yaros\Documents\Visual Studio 2022\project\EntityMain\obj\Debug\EntityMain.pdb
