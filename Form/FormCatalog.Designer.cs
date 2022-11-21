@@ -61,6 +61,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormCatalog";
             this.Text = "FormCatalog";
+            this.Load += new System.EventHandler(this.FormCatalog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

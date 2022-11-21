@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityMain.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace EntityMain
 {
     public partial class FormCatalog : Form
     {
+        DemoEntities1 db = new DemoEntities1();
+
         public FormCatalog()
         {
             InitializeComponent();
@@ -30,6 +33,12 @@ namespace EntityMain
         public void CloseCatalog() 
         {
             Application.Run(new FormAuthori());
+        }
+
+        private void FormCatalog_Load(object sender, EventArgs e)
+        {
+          //  dataGridView1.DataSource = db.Product.ToList();
+            dataGridView1.DataSource = db.Product.Select(x => x.Name.ToString()).ToList();
         }
     }
 }
