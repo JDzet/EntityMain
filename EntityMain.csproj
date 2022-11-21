@@ -95,6 +95,12 @@
     <Compile Include="DataBase\User.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form\FormCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCatalog.Designer.cs">
+      <DependentUpon>FormCatalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormAuthori.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\FormAuthori.resx">
       <DependentUpon>FormAuthori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCatalog.resx">
+      <DependentUpon>FormCatalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
