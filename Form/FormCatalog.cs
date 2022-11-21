@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace EntityMain
 {
     public partial class FormCatalog : Form
     {
-        DemoEntities1 db = new DemoEntities1();
+        DemoContext db = new DemoContext();
 
         public FormCatalog()
         {
@@ -28,7 +29,6 @@ namespace EntityMain
             th = new Thread(CloseCatalog);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
-
         }
         public void CloseCatalog() 
         {
@@ -37,8 +37,11 @@ namespace EntityMain
 
         private void FormCatalog_Load(object sender, EventArgs e)
         {
-          //  dataGridView1.DataSource = db.Product.ToList();
-            dataGridView1.DataSource = db.Product.Select(x => x.Name.ToString()).ToList();
+            dataGridView1.DataSource = db.Product
+                .Select(x => new { x.Name, x.Category}).ToList();
+
+            
+                
         }
     }
 }

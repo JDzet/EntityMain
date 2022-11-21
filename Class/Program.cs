@@ -16,7 +16,7 @@ namespace EntityMain
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAuthori());
+            Application.Run(new FormCatalog());
         }
     }
 }
