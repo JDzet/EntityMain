@@ -4,20 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище DemoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище DemoMainModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryId" />
           </Key>
           <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Manufacture">
           <Key>
             <PropertyRef Name="ManufactureId" />
           </Key>
           <Property Name="ManufactureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ManufactureName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -42,7 +42,7 @@
             <PropertyRef Name="ProvideId" />
           </Key>
           <Property Name="ProvideId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProvideName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -119,7 +119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище DemoModelContainer">
+        <EntityContainer Name="Хранилище DemoMainModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Manufacture" EntityType="Self.Manufacture" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -148,13 +148,13 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DemoMainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryId" />
           </Key>
           <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_CategoryProduct" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="Manufacture">
@@ -162,7 +162,7 @@
             <PropertyRef Name="ManufactureId" />
           </Key>
           <Property Name="ManufactureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ManufactureName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProductManufacture" FromRole="Manufacture" ToRole="Product" />
         </EntityType>
         <EntityType Name="Product">
@@ -191,7 +191,7 @@
             <PropertyRef Name="ProvideId" />
           </Key>
           <Property Name="ProvideId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProvideName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProvideProduct" FromRole="Provide" ToRole="Product" />
         </EntityType>
         <EntityType Name="Role">
@@ -271,7 +271,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DemoContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DemoContextMain" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="Manufacture" EntityType="Self.Manufacture" />
           <EntitySet Name="Product" EntityType="Self.Product" />
@@ -301,25 +301,25 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DemoModelContainer" CdmEntityContainer="DemoContext">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DemoMainModelContainer" CdmEntityContainer="DemoContextMain">
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="DemoModel.Category">
+            <EntityTypeMapping TypeName="DemoMainModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Manufacture">
-            <EntityTypeMapping TypeName="DemoModel.Manufacture">
+            <EntityTypeMapping TypeName="DemoMainModel.Manufacture">
               <MappingFragment StoreEntitySet="Manufacture">
                 <ScalarProperty Name="ManufactureId" ColumnName="ManufactureId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ManufactureName" ColumnName="ManufactureName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="DemoModel.Product">
+            <EntityTypeMapping TypeName="DemoMainModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Articule" ColumnName="Articule" />
@@ -338,15 +338,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provide">
-            <EntityTypeMapping TypeName="DemoModel.Provide">
+            <EntityTypeMapping TypeName="DemoMainModel.Provide">
               <MappingFragment StoreEntitySet="Provide">
                 <ScalarProperty Name="ProvideId" ColumnName="ProvideId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProvideName" ColumnName="ProvideName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="DemoModel.Role">
+            <EntityTypeMapping TypeName="DemoMainModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -354,7 +354,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DemoModel.sysdiagrams">
+            <EntityTypeMapping TypeName="DemoMainModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -365,7 +365,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="DemoModel.User">
+            <EntityTypeMapping TypeName="DemoMainModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

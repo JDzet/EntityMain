@@ -30,14 +30,26 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.info = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 173);
+            this.dataGridView1.ColumnHeadersVisible = false;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Image,
+            this.info,
+            this.price});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 173);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(797, 416);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -51,6 +63,27 @@
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // Image
+            // 
+            this.Image.HeaderText = "";
+            this.Image.Name = "Image";
+            // 
+            // info
+            // 
+            this.info.HeaderText = "";
+            this.info.Name = "info";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "";
+            this.price.Name = "price";
             // 
             // FormCatalog
             // 
@@ -71,5 +104,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewImageColumn Image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn info;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }

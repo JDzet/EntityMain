@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DemoMainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="CategoryId" />
     </Key>
     <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="Self.FK_CategoryProduct" FromRole="Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="Manufacture">
@@ -13,7 +13,7 @@
       <PropertyRef Name="ManufactureId" />
     </Key>
     <Property Name="ManufactureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ManufactureName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="Self.FK_ProductManufacture" FromRole="Manufacture" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product">
@@ -42,7 +42,7 @@
       <PropertyRef Name="ProvideId" />
     </Key>
     <Property Name="ProvideId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProvideName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="Self.FK_ProvideProduct" FromRole="Provide" ToRole="Product" />
   </EntityType>
   <EntityType Name="Role">
@@ -122,7 +122,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DemoContext" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DemoContextMain" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Category" EntityType="Self.Category" />
     <EntitySet Name="Manufacture" EntityType="Self.Manufacture" />
     <EntitySet Name="Product" EntityType="Self.Product" />

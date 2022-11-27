@@ -13,10 +13,10 @@ namespace EntityMain.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DemoContext : DbContext
+    public partial class DemoContextMain : DbContext
     {
-        public DemoContext()
-            : base("name=DemoContext")
+        public DemoContextMain()
+            : base("name=DemoContextMain")
         {
         }
     

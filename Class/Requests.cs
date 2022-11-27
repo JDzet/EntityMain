@@ -9,7 +9,7 @@ namespace EntityMain.Class
 {
     internal class Requests
     {
-        DemoContext Db = new DemoContext();
+        DemoContextMain Db = new DemoContextMain();
         public User Get(string log, string pas)
         {
             var user = Db.User.FirstOrDefault(x => x.Login == log && x.Password == pas);

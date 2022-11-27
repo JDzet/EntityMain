@@ -21,7 +21,7 @@ namespace EntityMain.DataBase
         }
     
         public int ManufactureId { get; set; }
-        public string Name { get; set; }
+        public string ManufactureName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Product { get; set; }

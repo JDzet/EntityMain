@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1a4c1f135b1946f79718d420a53e77a2" Name="Diagram1">
-        <EntityTypeShape EntityType="DemoModel.Category" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.Manufacture" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.Product" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.Provide" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.Role" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoModel.User" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
-        <AssociationConnector Association="DemoModel.FK_CategoryProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="DemoModel.FK_ProductManufacture" ManuallyRouted="false" />
-        <AssociationConnector Association="DemoModel.FK_ProvideProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="DemoModel.FK_RoleUser" ManuallyRouted="false" />
+      <Diagram DiagramId="c50f5f14dbae4f32b7b64e25cd05c0b0" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoMainModel.Category" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.Manufacture" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.Product" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.Provide" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.Role" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoMainModel.User" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="DemoMainModel.FK_CategoryProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoMainModel.FK_ProductManufacture" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoMainModel.FK_ProvideProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoMainModel.FK_RoleUser" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
