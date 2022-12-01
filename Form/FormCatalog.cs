@@ -1,4 +1,5 @@
-﻿using EntityMain.DataBase;
+﻿using EntityMain.Class;
+using EntityMain.DataBase;
 using EntityMain.Properties;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace EntityMain
     public partial class FormCatalog : Form
     {
         DemoContextMain db = new DemoContextMain();
+        Requests req = new Requests();
 
         public FormCatalog()
         {
@@ -36,35 +38,59 @@ namespace EntityMain
             Application.Run(new FormAuthori());
         }
 
+
+        List<Product> pr;
         private void FormCatalog_Load(object sender, EventArgs e)
         {
             /* dataGridView1.DataSource = db.Product
                  .Select(x => new { x.Name }).ToList();*/
 
-
-
-            var pr = db.Product.ToList();
-            List<object[]> prod = new List<object[]>();
-            foreach (var x in pr)
+            comboBoxCategor.Items.Add("Все категории");
+            var i = db.Category.Select(x => x.CategoryName).ToList();
+            foreach (var x in i) 
             {
-                prod.Add(new object[4]);
+                comboBoxCategor.Items.Add(x);
+            }
+            comboBoxCategor.SelectedIndex = 0;
+ 
+        }
 
-                prod[prod.Count - 1][0] = pr.ToString();
+        public void addDataGrid()
+        {
+            var prod = req.DataGridV(pr);
 
-                if (x.Photo == "") 
-                     prod[prod.Count - 1][1] = Resources.picture;
-                else
-                    prod[prod.Count - 1][1] = Resources.ResourceManager.GetObject(x.Photo.ToString());
-
-
-                prod[prod.Count - 1][2] = $"{x.Name}\n{ x.Description}\nПроизводитель: {x.Manufacture.ManufactureName}" +
-                    $"\nЦена: {x.Price}";
-                prod[prod.Count - 1][3] = $"{x.DiscountNow}%";
+            foreach (var x in prod)
+            {
+                dataGridView1.Rows.Add(x);
             }
 
-            foreach(object[] s in prod) 
+        }
+
+
+        private void comboBoxCategor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxCategor.SelectedIndex) 
             {
-                dataGridView1.Rows.Add(s);
+                case 0:
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Refresh();
+                    pr = db.Product.ToList();
+                    addDataGrid();
+                    break;
+
+                case 1:
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Refresh();
+                    pr = db.Product.Where(x => x.Category.CategoryName == comboBoxCategor.Text).ToList();
+                    addDataGrid();
+                    break;
+
+                case 2:
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Refresh();
+                    pr = db.Product.Where(x => x.Category.CategoryName == comboBoxCategor.Text).ToList();
+                    addDataGrid();
+                    break;
             }
         }
     } 
